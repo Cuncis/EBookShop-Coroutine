@@ -30,6 +30,7 @@ class EBookAdapter : RecyclerView.Adapter<EBookAdapter.EBookViewHolder>(){
     }
 
     fun setBooks(newList: ArrayList<Book>) {
+        bookList.clear()
         val result = DiffUtil.calculateDiff(EBookDiffUtils(bookList, newList), false)
         bookList.addAll(newList)
         result.dispatchUpdatesTo(this)

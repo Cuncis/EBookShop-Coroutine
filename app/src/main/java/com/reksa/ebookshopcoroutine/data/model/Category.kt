@@ -17,4 +17,8 @@ data class Category(
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
+
+    override fun toString(): String {
+        return categoryName
+    }
 }
